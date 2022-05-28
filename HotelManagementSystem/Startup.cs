@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using HotelManagementSystem.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,12 +22,18 @@ namespace HotelManagementSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+                    options.JsonSerializerOptions.MaxDepth = 0;
+                });
 
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection"); 
             services.AddDbContext<HotelDbContext>(options =>
                 options.UseMySql(mySqlConnectionStr,  
                 ServerVersion.AutoDetect(mySqlConnectionStr)));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "HotelManagementSystem", Version = "v1"});

@@ -27,7 +27,6 @@ C:\Users\RG 11\RiderProjects\HotelManagementSystem\HotelManagementSystem\obj\Deb
 C:\Users\RG 11\RiderProjects\HotelManagementSystem\HotelManagementSystem\obj\Debug\net5.0\ref\HotelManagementSystem.dll
 C:\Users\RG 11\RiderProjects\HotelManagementSystem\HotelManagementSystem\obj\Debug\net5.0\HotelManagementSystem.pdb
 C:\Users\RG 11\RiderProjects\HotelManagementSystem\HotelManagementSystem\obj\Debug\net5.0\HotelManagementSystem.genruntimeconfig.cache
-D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\appsettings.Development.json
 D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\appsettings.json
 D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\HotelManagementSystem.exe
 D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\HotelManagementSystem.deps.json
@@ -76,3 +75,4 @@ D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\Humanizer.dll
 D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\MySqlConnector.dll
 D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Hotel-Management-System\HotelManagementSystem\bin\Debug\net5.0\Bogus.dll
