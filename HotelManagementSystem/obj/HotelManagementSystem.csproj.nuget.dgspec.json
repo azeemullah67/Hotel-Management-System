@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RG 11\\RiderProjects\\HotelManagementSystem\\HotelManagementSystem\\HotelManagementSystem.csproj": {}
+    "D:\\Hotel-Management-System\\HotelManagementSystem\\HotelManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RG 11\\RiderProjects\\HotelManagementSystem\\HotelManagementSystem\\HotelManagementSystem.csproj": {
+    "D:\\Hotel-Management-System\\HotelManagementSystem\\HotelManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RG 11\\RiderProjects\\HotelManagementSystem\\HotelManagementSystem\\HotelManagementSystem.csproj",
+        "projectUniqueName": "D:\\Hotel-Management-System\\HotelManagementSystem\\HotelManagementSystem.csproj",
         "projectName": "HotelManagementSystem",
-        "projectPath": "C:\\Users\\RG 11\\RiderProjects\\HotelManagementSystem\\HotelManagementSystem\\HotelManagementSystem.csproj",
+        "projectPath": "D:\\Hotel-Management-System\\HotelManagementSystem\\HotelManagementSystem.csproj",
         "packagesPath": "C:\\Users\\RG 11\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RG 11\\RiderProjects\\HotelManagementSystem\\HotelManagementSystem\\obj\\",
+        "outputPath": "D:\\Hotel-Management-System\\HotelManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RG 11\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,30 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
