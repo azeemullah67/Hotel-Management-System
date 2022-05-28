@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HotelManagementSystem.Models
+﻿namespace HotelManagementSystem.Data.Models
 {
     public class Hotel
     {

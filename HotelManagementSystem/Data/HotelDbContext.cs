@@ -1,4 +1,4 @@
-﻿using HotelManagementSystem.Models;
+﻿using HotelManagementSystem.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelManagementSystem.Data
@@ -11,6 +11,8 @@ namespace HotelManagementSystem.Data
 
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
+
+        public virtual DbSet<Hotel> Hotels { get; set; }
 
         public virtual DbSet<Reservation> Reservations { get; set; }
     }
