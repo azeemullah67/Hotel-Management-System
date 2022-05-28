@@ -14,12 +14,9 @@ namespace HotelManagementSystem.Controllers
     [Route("[controller]")]
     public class ProfileController : ControllerBase
     {
-        
         private readonly HotelDbContext _hotelDbContext;
-        private readonly string _connectionString;
         public ProfileController(HotelDbContext hotelDbContext, IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("HotelDB");
             this._hotelDbContext = hotelDbContext;
         }
 
@@ -39,8 +36,6 @@ namespace HotelManagementSystem.Controllers
             {
                 return NotFound();
             }
-
-            _hotelDbContext.Entry(profile).Reference(p => p.Address).Load();
 
             return Ok(profile);
         }
@@ -122,6 +117,7 @@ namespace HotelManagementSystem.Controllers
                 .RuleFor(p => p.TelNo, v => v.Person.Phone)
                 .RuleFor(p => p.DateOfBirth, v => v.Person.DateOfBirth)
                 .RuleFor(p => p.Salutation, v => v.PickRandom(salutations))
+                .RuleFor(p => p.Address, v => v.Address.FullAddress())
                 .RuleFor(p => p.Country, v => v.Address.Country());
 
             return profileGenerator.Generate(count);

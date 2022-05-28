@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagementSystem.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20220528131513_hotels")]
+    [Migration("20220528140823_hotels")]
     partial class hotels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -112,26 +112,6 @@ namespace HotelManagementSystem.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Rooms");
-                });
-
-            modelBuilder.Entity("HotelManagementSystem.Models.RoomOccupied", b =>
-                {
-                    b.Property<DateTime>("From")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RoomNumber")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("To")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<bool>("WithBathroom")
-                        .HasColumnType("tinyint(1)");
-
-                    b.ToView("vwRoomsOccupied");
                 });
 
             modelBuilder.Entity("ProfileReservation", b =>

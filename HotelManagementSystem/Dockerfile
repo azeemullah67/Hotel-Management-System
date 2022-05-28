@@ -7,6 +7,9 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["HotelManagementSystem/HotelManagementSystem.csproj", "HotelManagementSystem/"]
 RUN dotnet restore "HotelManagementSystem/HotelManagementSystem.csproj"
+
+RUN dotnet ef --project .\HotelManagementSystem\ database update
+
 COPY . .
 WORKDIR "/src/HotelManagementSystem"
 RUN dotnet build "HotelManagementSystem.csproj" -c Release -o /app/build

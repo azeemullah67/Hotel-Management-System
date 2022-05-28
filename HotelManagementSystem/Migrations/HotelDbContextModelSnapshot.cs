@@ -112,26 +112,6 @@ namespace HotelManagementSystem.Migrations
                     b.ToTable("Rooms");
                 });
 
-            modelBuilder.Entity("HotelManagementSystem.Models.RoomOccupied", b =>
-                {
-                    b.Property<DateTime>("From")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RoomNumber")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("To")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<bool>("WithBathroom")
-                        .HasColumnType("tinyint(1)");
-
-                    b.ToView("vwRoomsOccupied");
-                });
-
             modelBuilder.Entity("ProfileReservation", b =>
                 {
                     b.Property<int>("ProfilesId")
