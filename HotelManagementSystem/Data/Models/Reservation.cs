@@ -7,11 +7,11 @@ namespace HotelManagementSystem.Data.Models
     {
         public int Id { get; set; }
 
+        public int HotelId { get; set; }
+
         public int RoomId { get; set; }
 
-        public Room Room { get; set; }
-
-        public List<Profile> Profiles { get; set; }
+        public Profile Profiles { get; set; }
 
         public DateTime Created { get; set; }
 

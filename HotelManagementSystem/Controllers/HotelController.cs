@@ -61,6 +61,10 @@ namespace HotelManagementSystem.Controllers
             existingHotel.Email = hotel.Email;
             existingHotel.TelNo = hotel.TelNo;
             existingHotel.Address = hotel.Address;
+            existingHotel.ImageUrl = hotel.ImageUrl;
+            existingHotel.PricePerNight = hotel.PricePerNight;
+            existingHotel.Facilities = hotel.Facilities;
+
 
             var updatedRoom = _hotelDbContext.Update(existingHotel);
             await _hotelDbContext.SaveChangesAsync();

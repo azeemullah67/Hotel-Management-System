@@ -40,6 +40,12 @@ namespace HotelManagementSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Room room)
         {
+
+            var existingHotel = await _hotelDbContext.Hotels.FindAsync(room.HotelId);
+            if (existingHotel == null)
+            {
+                return NotFound("Hotel Not Found");
+            }
             var createdRoom = await _hotelDbContext.Rooms.AddAsync(room);
             await _hotelDbContext.SaveChangesAsync();
 
@@ -59,7 +65,6 @@ namespace HotelManagementSystem.Controllers
             existingRoom.Description = room.Description;
             existingRoom.LastBooked = room.LastBooked;
             existingRoom.Level = room.Level;
-            existingRoom.RoomType = room.RoomType;
             existingRoom.NumberOfPlacesToSleep = room.NumberOfPlacesToSleep;
 
             var updatedRoom = _hotelDbContext.Update(existingRoom);

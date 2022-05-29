@@ -21,13 +21,18 @@ namespace HotelManagementSystem.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Description = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    ImageUrl = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     TelNo = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Address = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    NumberOfRooms = table.Column<int>(type: "int", nullable: false)
+                    NumberOfRooms = table.Column<int>(type: "int", nullable: false),
+                    PricePerNight = table.Column<int>(type: "int", nullable: false),
+                    Facilities = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -77,7 +82,6 @@ namespace HotelManagementSystem.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     LastBooked = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Level = table.Column<int>(type: "int", nullable: false),
-                    RoomType = table.Column<int>(type: "int", nullable: false),
                     WithBathroom = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     NumberOfPlacesToSleep = table.Column<int>(type: "int", nullable: false)
                 },

@@ -32,10 +32,19 @@ namespace HotelManagementSystem.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Facilities")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
                     b.Property<int>("NumberOfRooms")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PricePerNight")
                         .HasColumnType("int");
 
                     b.Property<string>("TelNo")
@@ -131,9 +140,6 @@ namespace HotelManagementSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("NumberOfPlacesToSleep")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RoomType")
                         .HasColumnType("int");
 
                     b.Property<bool>("WithBathroom")

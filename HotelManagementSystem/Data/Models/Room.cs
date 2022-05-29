@@ -16,16 +16,7 @@ namespace HotelManagementSystem.Data.Models
 
         public int Level { get; set; }
 
-        public RoomType RoomType { get; set; }
-
         public bool WithBathroom { get; set; }
-
         public int NumberOfPlacesToSleep { get; set; }
-    }
-
-    public enum RoomType
-    {
-        Standard,
-        Suite
     }
 }

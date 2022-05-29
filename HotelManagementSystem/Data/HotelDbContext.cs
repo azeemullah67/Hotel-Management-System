@@ -8,7 +8,6 @@ namespace HotelManagementSystem.Data
         public HotelDbContext(DbContextOptions<HotelDbContext> options)
             : base(options)
         {}
-
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
 

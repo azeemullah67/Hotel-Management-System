@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagementSystem.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20220528142041_hotels")]
+    [Migration("20220529162817_hotels")]
     partial class hotels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,10 +34,19 @@ namespace HotelManagementSystem.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Facilities")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
                     b.Property<int>("NumberOfRooms")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PricePerNight")
                         .HasColumnType("int");
 
                     b.Property<string>("TelNo")
@@ -133,9 +142,6 @@ namespace HotelManagementSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("NumberOfPlacesToSleep")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RoomType")
                         .HasColumnType("int");
 
                     b.Property<bool>("WithBathroom")
