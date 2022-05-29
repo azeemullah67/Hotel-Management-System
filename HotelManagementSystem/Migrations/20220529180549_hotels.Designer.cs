@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelManagementSystem.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20220529171824_hotels")]
+    [Migration("20220529180549_hotels")]
     partial class hotels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -146,12 +146,6 @@ namespace HotelManagementSystem.Migrations
 
                     b.Property<int>("Number")
                         .HasColumnType("int");
-
-                    b.Property<int>("NumberOfPlacesToSleep")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("WithBathroom")
-                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
 

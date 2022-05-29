@@ -145,12 +145,6 @@ namespace HotelManagementSystem.Migrations
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<int>("NumberOfPlacesToSleep")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("WithBathroom")
-                        .HasColumnType("tinyint(1)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Rooms");
