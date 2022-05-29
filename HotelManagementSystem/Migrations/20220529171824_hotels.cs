@@ -97,7 +97,9 @@ namespace HotelManagementSystem.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    HotelId = table.Column<int>(type: "int", nullable: false),
                     RoomId = table.Column<int>(type: "int", nullable: false),
+                    ProfileId = table.Column<int>(type: "int", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     From = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     To = table.Column<DateTime>(type: "datetime(6)", nullable: false)
@@ -106,48 +108,18 @@ namespace HotelManagementSystem.Migrations
                 {
                     table.PrimaryKey("PK_Reservations", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Reservations_Rooms_RoomId",
-                        column: x => x.RoomId,
-                        principalTable: "Rooms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "ProfileReservation",
-                columns: table => new
-                {
-                    ProfilesId = table.Column<int>(type: "int", nullable: false),
-                    ReservationsId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProfileReservation", x => new { x.ProfilesId, x.ReservationsId });
-                    table.ForeignKey(
-                        name: "FK_ProfileReservation_Profiles_ProfilesId",
-                        column: x => x.ProfilesId,
+                        name: "FK_Reservations_Profiles_ProfileId",
+                        column: x => x.ProfileId,
                         principalTable: "Profiles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProfileReservation_Reservations_ReservationsId",
-                        column: x => x.ReservationsId,
-                        principalTable: "Reservations",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProfileReservation_ReservationsId",
-                table: "ProfileReservation",
-                column: "ReservationsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reservations_RoomId",
+                name: "IX_Reservations_ProfileId",
                 table: "Reservations",
-                column: "RoomId");
+                column: "ProfileId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -156,16 +128,13 @@ namespace HotelManagementSystem.Migrations
                 name: "Hotels");
 
             migrationBuilder.DropTable(
-                name: "ProfileReservation");
-
-            migrationBuilder.DropTable(
-                name: "Profiles");
-
-            migrationBuilder.DropTable(
                 name: "Reservations");
 
             migrationBuilder.DropTable(
                 name: "Rooms");
+
+            migrationBuilder.DropTable(
+                name: "Profiles");
         }
     }
 }
