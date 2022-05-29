@@ -1,0 +1,29 @@
+version: "1.0"
+services:
+
+  hms-db:
+    image: mysql:8.0.26
+    container_name: hms-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=nothing123
+    ports:
+      - 3306:3306
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
+
+  hms-server:
+    image: mcr.microsoft.com/dotnet/sdk:5.0.401
+    container_name: hms-server
+    volumes:
+      - ./../../:/src
+    ports:
+      - 5002:5002
+    depends_on:
+      - "hms-db"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        echo "Compiling ..."
+        dotnet ef --project src/HotelManagementSystem database update
+        dotnet run --project src/HotelManagementSystem
