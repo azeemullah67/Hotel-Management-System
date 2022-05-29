@@ -24,3 +24,5 @@ This project is an Api support of an mock HMS UI.Which consists searching/viewin
 ```
 docker compose up
 ```
+
+Swagger UI support is also added to the project, So it will be easy to test the APIs.
