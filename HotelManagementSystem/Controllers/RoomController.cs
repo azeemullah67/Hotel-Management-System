@@ -65,7 +65,6 @@ namespace HotelManagementSystem.Controllers
             existingRoom.Description = room.Description;
             existingRoom.LastBooked = room.LastBooked;
             existingRoom.Level = room.Level;
-            existingRoom.NumberOfPlacesToSleep = room.NumberOfPlacesToSleep;
 
             var updatedRoom = _hotelDbContext.Update(existingRoom);
             await _hotelDbContext.SaveChangesAsync();

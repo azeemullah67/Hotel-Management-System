@@ -15,8 +15,5 @@ namespace HotelManagementSystem.Data.Models
         public DateTime LastBooked { get; set; }
 
         public int Level { get; set; }
-
-        public bool WithBathroom { get; set; }
-        public int NumberOfPlacesToSleep { get; set; }
     }
 }
